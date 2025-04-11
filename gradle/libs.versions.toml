@@ -1,0 +1,10 @@
+[versions]
+dgt = "2.30.+"
+devauth = "1.2.1"
+
+[plugins]
+deftu = { id = "dev.deftu.gradle.tools", version.ref = "dgt" }
+shadow = { id = "dev.deftu.gradle.tools.shadow", version.ref = "dgt" }
+bloom = { id = "dev.deftu.gradle.tools.bloom", version.ref = "dgt" }
+loom = { id = "dev.deftu.gradle.tools.minecraft.loom", version.ref = "dgt" }
+resources = { id = "dev.deftu.gradle.tools.resources", version.ref = "dgt" }
