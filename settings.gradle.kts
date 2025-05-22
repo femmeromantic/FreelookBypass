@@ -11,7 +11,6 @@ pluginManagement {
 
         maven("https://maven.deftu.dev/snapshots")
         maven("https://s01.oss.sonatype.org/content/groups/public/")
-        mavenLocal()
 
         gradlePluginPortal()
         mavenCentral()

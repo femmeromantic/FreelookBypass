@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.shadow)
     alias(libs.plugins.bloom)
     alias(libs.plugins.loom)
+    alias(libs.plugins.ducks)
     alias(libs.plugins.resources)
 }
 
@@ -19,25 +20,12 @@ toolkitLoomHelper {
     // mixins
     useForgeMixin(modData.id)
     useMixinRefMap(modData.id)
-    useTweaker("org.spongepowered.asm.launch.MixinTweaker")
 }
 
 repositories {
     maven("https://repo.spongepowered.org/maven/")
 }
 
-sourceSets {
-    val dummy by creating
-    main {
-        dummy.compileClasspath += compileClasspath
-        compileClasspath += dummy.output
-        output.setResourcesDir(java.classesDirectory)
-    }
-}
-
-
 dependencies {
-    compileOnly(files("libs/Freelook.jar"))
-
-    implementation(shade("org.spongepowered:mixin:0.7.11-SNAPSHOT") { isTransitive = false })
+    compileOnly("org.spongepowered:mixin:0.7.11-SNAPSHOT")
 }

@@ -14,12 +14,16 @@ import java.util.Map;
 
 @Mixin(value = FMLHandshakeMessage.ModList.class, remap = false)
 public class ModListMixin {
+
     @Shadow
     private Map<String,String> modTags;
 
     @Inject(method = "<init>(Ljava/util/List;)V", at = @At("RETURN"))
     private void removeMod(List<ModContainer> modList, CallbackInfo ci) {
-        if (!Minecraft.getMinecraft().isIntegratedServerRunning())
+        if (!Minecraft.getMinecraft().isIntegratedServerRunning()) {
             this.modTags.remove("freelook");
+            this.modTags.remove("freelookbypass");
+        }
     }
+
 }

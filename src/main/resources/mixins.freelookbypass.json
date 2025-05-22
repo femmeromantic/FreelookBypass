@@ -3,10 +3,6 @@
   "minVersion": "0.7",
   "package": "com.github.chromaticforge.freelook.bypass.mixins",
   "refmap": "mixins.${mod_id}.refmap.json",
-  "injectors": {
-    "maxShiftBy": 5
-  },
-  "verbose": true,
   "mixins": [
     "FreelookConfigMixin",
     "FreelookMixin",
